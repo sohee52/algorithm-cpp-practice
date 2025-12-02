@@ -38,7 +38,12 @@ int main() {
         adj[b].push_back(a);
     }
 
+    for (int i = 1; i <= n; i++) sort(adj[i].begin(), adj[i].end());
+
     dfs(v);
     cout << "\n";
+
+    fill(visited, visited+1004, 0);
+    
     bfs(v);
 }
