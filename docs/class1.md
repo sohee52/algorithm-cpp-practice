@@ -1,3 +1,9 @@
+### 문제 모음
+- [문제](https://www.acmicpc.net/problem/10951)
+- [문제](https://www.acmicpc.net/problem/11654)
+- [문제](https://www.acmicpc.net/problem/25083)
+- [문제](https://www.acmicpc.net/problem/2439)
+
 ### while(cin >> a >> b)
 - [문제](https://www.acmicpc.net/problem/10951)
 - a와 b가 입력되는 동안 계속해서 반복문이 실행된다.
@@ -26,3 +32,8 @@ cout << a << "\n";
     /\_/\
     ( o.o )
     ```
+
+### string(개수, 문자)
+- [문제](https://www.acmicpc.net/problem/2439)
+- int와 char를 인자로 받아서, char를 int 개수만큼 반복하여 문자열을 만들어 반환하는 생성자입니다.
+- 예를 들어 string(5, '*')는 '*' 문자를 5개 연속으로 포함하는 문자열을 생성합니다.
