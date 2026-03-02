@@ -33,7 +33,18 @@ cout << a << "\n";
     ( o.o )
     ```
 
-### string(개수, 문자)
+### string(int 개수, char 문자)
 - [문제](https://www.acmicpc.net/problem/2439)
 - int와 char를 인자로 받아서, char를 int 개수만큼 반복하여 문자열을 만들어 반환하는 생성자입니다.
 - 예를 들어 string(5, '*')는 '*' 문자를 5개 연속으로 포함하는 문자열을 생성합니다.
+
+### to_string(int 숫자)
+- [문제](https://www.acmicpc.net/problem/31403)
+- int형 숫자를 string형으로 변환하는 함수입니다.
+- `s += i;` 는 런타임 에러가 발생할 수 있습니다. 왜냐하면 i는 int형이기 때문에, s에 직접적으로 더할 수 없습니다.
+- 대신, to_string(i)를 사용하여 i를 string으로 변환한 후에 s에 더해야 합니다.
+
+### stoi(string s)
+- [문제](https://www.acmicpc.net/problem/31403)
+- string형 s를 int형으로 변환하는 함수입니다.
+- 예를 들어, string s = "123"; int num = stoi(s); 는 s에 저장된 문자열 "123"을 int형으로 변환하여 num에 저장합니다. num의 값은 123이 됩니다.
