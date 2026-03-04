@@ -11,9 +11,20 @@
 - https://www.acmicpc.net/problem/1010
 - $mCn$을 dp로 표현하면 `dp[n][r] = dp[n-1][r-1] + dp[n-1][r]`이 된다.
 
-### 1개 가져가거나 3개 가져가는 게임
+### 마지막으로 1개 가져가거나 3개 가져가면 이기는 게임
 - https://www.acmicpc.net/problem/9655
 - 상대를 지는 상태로 보내면 SK가 이긴다.
 - `dp[i-1] == false` 이면 → 1개 가져가서 CY가 지게 만들 수 있음 → SK 승리
 - `dp[i-3] == false` 이면 → 3개 가져가서 CY가 지게 만들 수 있음 → SK 승리
 - 그래서 점화식은 `dp[i] = (!dp[i-1]) || (!dp[i-3])`
+
+### 최대한 적은 3kg나 5kg 봉지로 설탕 배달하기
+- https://www.acmicpc.net/problem/2839
+
+```cpp
+    dp[0] = 0;
+    for (int i = 1; i <= n; i++) {
+        if (i >= 3) dp[i] = min(dp[i], dp[i-3] + 1);
+        if (i >= 5) dp[i] = min(dp[i], dp[i-5] + 1);
+    }
+```
