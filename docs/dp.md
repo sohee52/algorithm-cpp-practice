@@ -2,7 +2,10 @@
 - https://www.acmicpc.net/problem/2748
 - https://www.acmicpc.net/problem/1010
 - https://www.acmicpc.net/problem/9655
+- https://www.acmicpc.net/problem/2839
 - https://www.acmicpc.net/problem/1463
+- https://www.acmicpc.net/problem/2579
+- https://www.acmicpc.net/problem/11726
 
 ### long long
 - https://www.acmicpc.net/problem/2748
@@ -43,4 +46,13 @@ fill(dp, dp + n + 4, INF);
 
 ```cpp
 dp[i] = max(dp[i-3] + a[i-1], dp[i-2]) + a[i];
+```
+
+### 2xn 타일링
+- https://www.acmicpc.net/problem/11726
+- 마지막이 세로 타일이라면 `dp[i-1]`가지 경우가 있고, 마지막이 가로 타일이라면 `dp[i-2]`가지 경우가 있다.
+- 두 경우는 겹치지 않으므로 이 둘을 더하면 된다.
+- 이때, 답이 매우 커질 수 있으므로 10007로 나눈 나머지를 저장해야 한다.
+```cpp
+dp[i] = (dp[i-1] + dp[i-2]) % 10007;
 ```
