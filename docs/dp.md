@@ -67,14 +67,14 @@ string addStr(string a, string b) {
     reverse(a.begin(), a.end());
     reverse(b.begin(), b.end());
 
-    // 최종 결과를 저장할 num
-    string num = "";
-
     // 두 숫자 중 더 긴 자릿수만큼은 반드시 계산해야 하므로 길이 계산
     int lenA = a.length();
     int lenB = b.length();
     int len = max(lenA, lenB);
 
+    // 최종 결과를 저장할 num
+    string num = "";
+    
     // 현재 자리의 총합(자릿수 + carry)을 저장할 sum
     int sum = 0;
 
