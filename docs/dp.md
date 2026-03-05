@@ -6,6 +6,7 @@
 - https://www.acmicpc.net/problem/1463
 - https://www.acmicpc.net/problem/2579
 - https://www.acmicpc.net/problem/11726
+- https://www.acmicpc.net/problem/2407
 
 ### long long
 - https://www.acmicpc.net/problem/2748
@@ -55,4 +56,45 @@ dp[i] = max(dp[i-3] + a[i-1], dp[i-2]) + a[i];
 - 이때, 답이 매우 커질 수 있으므로 10007로 나눈 나머지를 저장해야 한다.
 ```cpp
 dp[i] = (dp[i-1] + dp[i-2]) % 10007;
+```
+
+### long long보다 큰 수여서, string으로 더해야 하는 경우
+- https://www.acmicpc.net/problem/2407
+
+```cpp
+string addStr(string a, string b) {
+    // 일의 자리부터 더하기 쉽도록 문자열을 뒤집음
+    reverse(a.begin(), a.end());
+    reverse(b.begin(), b.end());
+
+    // 최종 결과를 저장할 num
+    string num = "";
+
+    // 두 숫자 중 더 긴 자릿수만큼은 반드시 계산해야 하므로 길이 계산
+    int lenA = a.length();
+    int lenB = b.length();
+    int len = max(lenA, lenB);
+
+    // 현재 자리의 총합(자릿수 + carry)을 저장할 sum
+    int sum = 0;
+
+    // 가장 긴 자릿수(len)까지 혹은 carry(sum)가 남아있을 때까지
+    for (int i = 0; i < len || sum; i++) {
+        // 기존 carry(sum)에 현재 자리 숫자를 더함
+        if (lenA > i) sum += a[i] - '0';
+        if (lenB > i) sum += b[i] - '0';
+
+        // sum % 10은 일의 자리의 결과 숫자만 뽑아냄
+        // 문자열이 되도록 '0'을 붙여서 num에 넣기
+        num += (sum % 10) + '0';
+
+        // sum / 10은 carry를 의미. 다음 계산에 반영
+        sum /= 10;
+    }
+
+    // 결과가 뒤집힌 상태이므로 다시 원래 순서로 뒤집기
+    reverse(num.begin(), num.end());
+
+    return num;
+}
 ```
