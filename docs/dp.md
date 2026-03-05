@@ -8,6 +8,7 @@
 - https://www.acmicpc.net/problem/11726
 - https://www.acmicpc.net/problem/2407
 - https://www.acmicpc.net/problem/17626
+- https://www.acmicpc.net/problem/1912
 
 ### long long
 - https://www.acmicpc.net/problem/2748
@@ -111,4 +112,11 @@ for (int i = 1; i <= n; i++) {
         dp[i] = min(dp[i], dp[i - j*j] + 1);
     }
 }
+```
+
+### 연속합
+- https://www.acmicpc.net/problem/1912
+
+```cpp
+psum[i] = max(a[i], psum[i-1] + a[i]);
 ```
