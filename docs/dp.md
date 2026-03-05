@@ -37,3 +37,10 @@
 int dp[n+4];
 fill(dp, dp + n + 4, INF);
 ```
+
+### 한 계단 또는 두 계단씩 오르되, 연속된 세 계단은 밟지 않으며 계단 오르기
+- https://www.acmicpc.net/problem/2579
+
+```cpp
+dp[i] = max(dp[i-3] + a[i-1], dp[i-2]) + a[i];
+```
