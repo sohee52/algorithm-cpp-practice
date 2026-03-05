@@ -8,10 +8,11 @@ string addStr(string a, string b) {
     reverse(a.begin(), a.end());
     reverse(b.begin(), b.end());
 
-    string num = "";
     int lenA = a.length();
     int lenB = b.length();
-    int len = lenA > lenB ? lenA : lenB;
+    int len = max(lenA, lenB);
+
+    string num = "";
     int sum = 0;
 
     for (int i = 0; i < len || sum; i++) {
@@ -20,7 +21,7 @@ string addStr(string a, string b) {
         num += (sum % 10) + '0';
         sum /= 10;
     }
-    
+
     reverse(num.begin(), num.end());
 
     return num;
