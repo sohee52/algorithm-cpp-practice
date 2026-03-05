@@ -2,6 +2,7 @@
 - https://www.acmicpc.net/problem/2748
 - https://www.acmicpc.net/problem/1010
 - https://www.acmicpc.net/problem/9655
+- https://www.acmicpc.net/problem/1463
 
 ### long long
 - https://www.acmicpc.net/problem/2748
@@ -27,4 +28,12 @@
         if (i >= 3) dp[i] = min(dp[i], dp[i-3] + 1);
         if (i >= 5) dp[i] = min(dp[i], dp[i-5] + 1);
     }
+```
+
+### 최솟값이 dp 값이 되는 경우 INF로 초기화하기
+- https://www.acmicpc.net/problem/1463
+
+```cpp
+int dp[n+4];
+fill(dp, dp + n + 4, INF);
 ```
