@@ -9,6 +9,7 @@
 - https://www.acmicpc.net/problem/2407
 - https://www.acmicpc.net/problem/17626
 - https://www.acmicpc.net/problem/1912
+- https://www.acmicpc.net/problem/11053
 
 ### long long
 - https://www.acmicpc.net/problem/2748
@@ -119,4 +120,16 @@ for (int i = 1; i <= n; i++) {
 
 ```cpp
 psum[i] = max(a[i], psum[i-1] + a[i]);
+```
+
+### 가장 긴 증가하는 부분 수열
+- https://www.acmicpc.net/problem/11053
+
+```cpp
+fill(dp, dp + 1004, 1);
+for (int i = 2; i <= n; i++) {
+    for (int j = 1; j < i; j++) {
+        if (a[i] > a[j]) dp[i] = max(dp[i], dp[j] + 1);
+    }
+}
 ```
