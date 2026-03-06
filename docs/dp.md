@@ -133,3 +133,17 @@ for (int i = 2; i <= n; i++) {
     }
 }
 ```
+
+### 가장 큰 증가하는 부분 수열
+- https://www.acmicpc.net/problem/11055
+- `dp[i]`의 기본값을 `a[i]`로 설정해야 한다.
+- 그리고 `dp[i]`와 `dp[j] + a[i]`를 비교해야 한다.
+```cpp
+for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    dp[i] = a[i];
+    for (int j = 0; j < i; j++) {
+        if (a[i] > a[j]) dp[i] = max(dp[i], dp[j] + a[i]);
+    }
+}
+```
