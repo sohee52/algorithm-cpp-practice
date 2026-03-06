@@ -2,6 +2,7 @@
 - https://www.acmicpc.net/problem/1260
 - https://www.acmicpc.net/problem/1325
 - https://www.acmicpc.net/problem/14940
+- https://www.acmicpc.net/problem/16918
 
 ### 정점 번호가 작은 것을 먼저 방문하는 DFS와 BFS
 - https://www.acmicpc.net/problem/1260
@@ -75,3 +76,10 @@ for (int i = 0; i < n; i++) {
 
 - 그래프 탐색할 때 `a[ny][nx] == 0`인 경우 탐색하면서 `visited[ny][nx] = 0`으로 바꾸지 않아야 한다.
 - 우선 `continue;`로 탐색하지 않고 넘어가고, 나중에 출력할 때 `a[i][j] == 0`인 경우 0으로 출력하면 된다.
+
+### 2차원 벡터 초기화하기
+- https://www.acmicpc.net/problem/16918
+```cpp
+vector<string> ret(r, string(c, 'O'));
+```
+- 이렇게 하면 `ret` 벡터의 각 요소가 길이 `c`인 문자열로 초기화된다. 문자열의 각 문자는 'O'로 채워진다. 따라서 `ret`은 `r`개의 문자열로 이루어진 벡터가 된다.
