@@ -83,3 +83,18 @@ for (int i = 0; i < n; i++) {
 vector<string> ret(r, string(c, 'O'));
 ```
 - 이렇게 하면 `ret` 벡터의 각 요소가 길이 `c`인 문자열로 초기화된다. 문자열의 각 문자는 'O'로 채워진다. 따라서 `ret`은 `r`개의 문자열로 이루어진 벡터가 된다.
+
+### 3초 전 폭탄과 1초 전 폭탄 구분하기
+- https://www.acmicpc.net/problem/16918
+```cpp
+vector<string> first = explode(a);
+vector<string> second = explode(first);
+
+if (n % 4 == 3) {
+    for (string s : first) cout << s << "\n";
+} else {
+    for (string s : second) cout << s << "\n";
+}
+```
+- 3초 전 폭탄과 1초 전 폭탄이 서로 다른 모양이므로, `explode` 함수를 두 번 호출하여 각각의 결과를 저장한다.
+- 그리고 `n % 4`의 결과에 따라 출력할 벡터를 결정한다. `n % 4 == 3`인 경우에는 3초 전 폭탄이 남아있는 상태이므로 `first` 벡터를 출력하고, 그렇지 않은 경우에는 1초 전 폭탄이 남아있는 상태이므로 `second` 벡터를 출력한다.
